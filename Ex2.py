@@ -10,15 +10,20 @@ class City:
 
         while count < len(self.houses_prices):
             max_index = self.findMaxNotVisited(is_visited)
+            sum_of_neighbours = 0
             is_visited[max_index] = 1
-            if max_index - 1 > 0 and is_visited[max_index - 1] == 0:
+            if max_index - 1 >= 0 and is_visited[max_index - 1] == 0:
                 is_visited[max_index - 1] = 1
-                total += self.houses_prices[max_index - 1]
+                sum_of_neighbours += self.houses_prices[max_index - 1]
                 count += 1
             if max_index + 1 < len(self.houses_prices) and is_visited[max_index + 1] == 0:
                 is_visited[max_index + 1] = 1
-                total += self.houses_prices[max_index + 1]
+                sum_of_neighbours += self.houses_prices[max_index + 1]
                 count += 1
+            if sum_of_neighbours < self.houses_prices[max_index]:
+                total += sum_of_neighbours
+            else:
+                total += self.houses_prices[max_index]
             count += 1
 
         return total

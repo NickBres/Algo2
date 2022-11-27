@@ -10,7 +10,7 @@ if __name__ == '__main__':
     ex1 = Ex1.Hills(heights)
     print("1: " + str(ex1.waterLevel()))
 
-    prices1 = [50, 30, 40, 60, 10, 30, 10]
+    prices1 = [800, 1000, 900]
     ex2 = Ex2.City(prices1)
     print("2: " + str(ex2.bestPrice()))
     prices2 = [30, 50, 60, 40, 100000000000, 1000, 20, 30]

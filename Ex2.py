@@ -16,8 +16,11 @@ class City:
                 self.to_repair[j] = True
             i += 2
             j += 2
-        gap_index = self.findGap()
+        self.fillGaps()
+        return self.calcTotal()
 
+    def fillGaps(self):
+        gap_index = self.findGap()
         while gap_index != -1:
             new_sum_from_left = 0
             i = gap_index
@@ -74,8 +77,6 @@ class City:
             else:
                 self.to_repair[gap_index + 1] = True
             gap_index = self.findGap()
-
-        return self.calcTotal()
 
     def findGap(self):
         i = 0

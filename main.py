@@ -14,7 +14,7 @@ if __name__ == '__main__':
     print("2: " + str(ex2.price))
     print(prices1)
     print(ex2.to_repair)
-    prices2 = [30, 50, 60, 40, 100000000000, 1000, 20, 30]
+    prices2 = [10, 1000000, 30, 50, 60, 40, 1000000, 1000, 20, 30]
     ex2 = Ex2.City(prices2)
     print("2: " + str(ex2.price))
     print(prices2)

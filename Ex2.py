@@ -17,6 +17,7 @@ class City:
             i += 2
             j += 2
         gap_index = self.findGap()
+
         while gap_index != -1:
             new_sum_from_left = 0
             i = gap_index
@@ -27,7 +28,6 @@ class City:
                     new_sum_from_left -= self.houses_prices[j]
                 i -= 2
                 j -= 2
-
             new_sum_from_right = 0
             i = gap_index + 1
             j = i + 1
@@ -38,7 +38,20 @@ class City:
                 i += 2
                 j += 2
 
-            if new_sum_from_right < new_sum_from_left:
+            old_sum_from_left = self.houses_prices[gap_index]
+            i = gap_index - 1
+            while i >= 0 and not (self.to_repair[i]):
+                old_sum_from_left += self.houses_prices[i]
+                i -= 2
+            old_sum_from_right = self.houses_prices[gap_index + 1]
+            i = gap_index + 2
+            while i < self.size and not (self.to_repair[i]):
+                old_sum_from_right += self.houses_prices[i]
+                i += 2
+
+            minSum = min(new_sum_from_right, new_sum_from_left, old_sum_from_right, old_sum_from_left)
+
+            if minSum == new_sum_from_right:
                 i = gap_index + 1
                 j = i + 1
                 while i < self.size and not (self.to_repair[i]):
@@ -47,7 +60,7 @@ class City:
                         self.to_repair[j] = False
                     i += 2
                     j += 2
-            else:
+            elif minSum == new_sum_from_left:
                 i = gap_index
                 j = i - 1
                 while i >= 0 and not (self.to_repair[i]):
@@ -56,6 +69,10 @@ class City:
                         self.to_repair[j] = False
                     i -= 2
                     j -= 2
+            elif minSum == old_sum_from_left:
+                self.to_repair[gap_index] = True
+            else:
+                self.to_repair[gap_index + 1] = True
             gap_index = self.findGap()
 
         return self.calcTotal()

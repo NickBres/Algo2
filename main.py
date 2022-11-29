@@ -11,14 +11,12 @@ if __name__ == '__main__':
 
     prices1 = [50, 30, 40, 60, 10, 30, 10]
     ex2 = Ex2.City(prices1)
-    print("2: " + str(ex2.price))
-    print(prices1)
-    print(ex2.to_repair)
+    print("2 : " + str(ex2.totalPrice))
+    print(ex2.chosen)
     prices2 = [10, 1000000, 30, 50, 60, 40, 1000000, 1000, 20, 30]
     ex2 = Ex2.City(prices2)
-    print("2: " + str(ex2.price))
-    print(prices2)
-    print(ex2.to_repair)
+    print("2 : " + str(ex2.totalPrice))
+    print(ex2.chosen)
 
     words = ["hell", "hello", "low", "world", "my", "name", "is", "nick"]
     ex3 = Ex3.Lang(words)

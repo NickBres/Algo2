@@ -20,7 +20,6 @@ if __name__ == '__main__':
 
     words = ["chen", "che", "nadav", "wave"]
     ex3 = Ex3.Lang(words)
-    print("chenadavchenwavechenchenadav")
     sentence = ex3.splitWords("chenadavchenwavechenchenadav")
     print("3: " + sentence)
 

@@ -9,13 +9,6 @@ class Lang:
     def __init__(self, words):
         self.dictionary = sorted(words)
 
-    # O(q)
-    def isDictionaryContainsWordStartWith(self, text):
-        for word in self.dictionary:
-            if text in word:
-                return True
-        return False
-
     # O(qn)
     def splitWords(self, sentence):
         i = 0

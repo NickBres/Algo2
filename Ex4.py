@@ -9,4 +9,4 @@ class Binary:
             self.number[j] = 0
             j -= 1
         if j >= 0:
-            self.number[j] = 1
+             self.number[j] = 1

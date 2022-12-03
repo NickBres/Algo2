@@ -18,9 +18,10 @@ if __name__ == '__main__':
     print("2 : " + str(ex2.totalPrice))
     print(ex2.chosen)
 
-    words = ["hell", "hello", "low", "world", "my", "name", "is", "nick"]
+    words = ["chen", "che", "nadav", "wave"]
     ex3 = Ex3.Lang(words)
-    sentence = ex3.splitWords("helloworldmynameisnicknickismynamelowworldishelllowlowlowisisnicknickhellhellolow")
+    print("chenadavchenwavechenchenadav")
+    sentence = ex3.splitWords("chenadavchenwavechenchenadav")
     print("3: " + sentence)
 
     ex4 = Ex4.Binary([1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1])

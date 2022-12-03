@@ -7,7 +7,6 @@ class Hills:
         hp = self.heights.index(max(self.heights))
         if hp == -1:
             return 0
-
         return self.waterLevelBeforeHighestPoint(hp) + self.waterLevelAfterHighestPoint(hp)
 
     def waterLevelBeforeHighestPoint(self, hp):

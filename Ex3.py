@@ -12,7 +12,7 @@ class Lang:
     # O(qn)
     def splitWords(self, sentence):
         i = 0
-        j = i + 1
+        j = 1
         while j < len(sentence):
             while j < len(sentence) and not (sentence[i:j] in self.dictionary): # find first word
                 j += 1
